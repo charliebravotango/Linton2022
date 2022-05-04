@@ -55,7 +55,8 @@ Download the following script and open it in SSMS
 > If you run the script more than once, you will get an error, but the *Results* tab should show the results correctly.
 ### Success Criteria
 - [ ] `assessment` database observed&mdash;`5 points`
-- [ ] 
+
+![Task 1 Results Window](https://github.com/charliebravotango/Linton2022/blob/main/Artefacts/Task1results.png)
 ## Task 2 &mdash; Backup a database
 > 20 points
 
