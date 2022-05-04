@@ -42,6 +42,8 @@ If you have any problems with the following tasks, please contact your instructo
 ## Task 1 &mdash; Create and populate a database
 > 20 points
 ### Overview
+:warning: Do this task first as most of the other tasks require the database to have been created!
+
 This task is meant to simulate an application installed that requires the creation of a SQL database. For simplicity, a script is provided that can be downloaded from an Azure storage account that will create and populate the database.
 ### Resources
 Download the following script and open it in SSMS
@@ -57,7 +59,7 @@ Download the following script and open it in SSMS
 Alternatively, you can run the following query
 ```SQL
 USE assessment
-SELECT COUNT(1) AS [N], SUM(price) AS [Sigma] FROM assessment.prices
+SELECT COUNT(1) AS [N], SUM(price) AS [Sigma] FROM assessment.prices;
 ```
 ### Success Criteria `20 points`
 - [ ] `assessment` database observed&mdash;`10 points`
@@ -69,7 +71,7 @@ SELECT COUNT(1) AS [N], SUM(price) AS [Sigma] FROM assessment.prices
 
 Placeholder
 ## Task 3 &mdash; Modify a database
-> 20 points (maximum)&mdash;`60 points` available
+> 20 points
 
 ### Overview
 This task is meant to simulate application activity in the database. For simplicity, a script is provided that can be downloaded from an Azure storage account that will modify the database's data.
@@ -77,8 +79,18 @@ This task is meant to simulate application activity in the database. For simplic
 Download the following script and open it in SSMS
 - [Simulate Activity Script](https://linton.blob.core.windows.net/public/Simulate%20Activity.sql)
 > The lab VM only has Internet Explorer installed, which can download the script; choose *Open* in the prompt at the bottom of the Internet Explorer browser window. This will open the script in SSMS for you.
+### Instructions
+1. Open the `Simulate Activity.sql` script in SSMS
+1. Run the script
 
+Alternatively you can type the following script into SSMS directly and run it.
+```SQL
+UPDATE assessment.dbo.prices SET price = id + 200;
+SELECT COUNT(1) AS [N], SUM(price) AS [Sigma] FROM assessment.prices;
+```
 
+### Success Criteria `20 points`
+- [ ] Script execution results match the following screenshot&mdash;`20 points`
 
 ![Task 2 Results Window](https://github.com/charliebravotango/Linton2022/blob/main/Artefacts/Task2Results.png)
 ## Task 4 &mdash; Restore a database
