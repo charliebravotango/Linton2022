@@ -29,14 +29,15 @@ If you have any problems with the following tasks, please contact your instructo
 1. Perform a *trace* to identify long-running queries ([Task 6](https://github.com/charliebravotango/Linton2022/blob/main/Assessment/Instructions.md#task-6--perform-a-trace)) `40 points`
 1. Create a performance monitoring plan using out-of-the-box tools ([Task 7](https://github.com/charliebravotango/Linton2022/blob/main/Assessment/Instructions.md#task-7--monitor-sql-server)) `40 points`
 ## Instructions
+- [X] The assessment must be completed withing `4 hours`
 - [X] There are `200 points` available over 7 tasks&mdash;passing score is `160 points` (80%)
-- [X] Tasks may be undertaken in any order (some cannot be done before others,&mdash;most tasks depend on the assessment database having been created)
+- [X] Tasks may be undertaken in any order (some cannot be done before others&mdash;most tasks depend on the assessment database having been created)
 - [X] Several tasks have code to run in SSMS&mdash;leave the results window open for the assessment observation
   >  - [X] Scripts may be run more than once safely and will not affect the assessment observation
-- [X] Disconnect from the Teams call while doing the lab
+- [X] Disconnect from the Teams call while doing the assessment
     > - [X] Reconnect when you want [some of] your work assessed
     > - [X] Your instructor will monitor your labs during the assessment
-- [X] :alarm_clock: Manage your time&mdash;assessment observations must be completed within 4 hours of starting the assessment
+- [X] :alarm_clock: Manage your time&mdash;assessment observations must be completed within `4 hours` of starting the assessment
 
 ## Task 1 &mdash; create and populate a database
 > 20 points
