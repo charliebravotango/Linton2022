@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-Linton2022",
+      "appliesTo": "/",
+      "type": "launch"
+    }
+  ]
+}

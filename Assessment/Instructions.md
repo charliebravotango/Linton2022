@@ -39,10 +39,23 @@ If you have any problems with the following tasks, please contact your instructo
     > - [X] Your instructor will monitor your labs during the assessment
 - [X] :alarm_clock: Manage your time&mdash;assessment observations must be completed within `4 hours` of starting the assessment
 
-## Task 1 &mdash; create and populate a database
+## Task 1 &mdash; Create and populate a database
 > 20 points
+### Overview
+This task is meant to simulate an application installed that requires the creation of a SQL database. For simplicity, a script is provided that can be downloaded from an Azure storage account that will create and populate the database.
+### Resources
+Download the following script and open it in SSMS
+- [Create Database Script](https://linton.blob.core.windows.net/public/Create%20and%20Populate%20Database.sql)
+> The lab VM only has Internet Explorer installed, which can download the script; choose *Open* in the prompt at the bottom of the Internet Explorer browser window. This will open the script in SSMS for you.
 
-Placeholder
+### Instructions
+1. Open the `Create and populate database.sql` script in SSMS
+1. Run the script
+    1. Keep the *Results* window open for the assessment
+> If you run the script more than once, you will get an error, but the *Results* tab should show the results correctly.
+### Success Criteria
+- [ ] `assessment` database observed&mdash;`5 points`
+- [ ] 
 ## Task 2 &mdash; Backup a database
 > 20 points
 
