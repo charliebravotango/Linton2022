@@ -88,7 +88,7 @@ Alternatively you can type the following script into SSMS directly and run it.
 UPDATE assessment.dbo.prices SET price = id + 200;
 SELECT COUNT(1) AS [N], SUM(price) AS [Sigma] FROM assessment.prices;
 ```
-
+:warning: It is safe to run the script above as many times as you like, the results will always be the same!
 ### Success Criteria `20 points`
 - [ ] Script execution results match the following screenshot&mdash;`20 points`
 
