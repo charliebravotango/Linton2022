@@ -29,7 +29,7 @@ If you have any problems with the following tasks, please contact your instructo
 1. Perform a *trace* to identify long-running queries ([Task 6](https://github.com/charliebravotango/Linton2022/blob/main/Assessment/Instructions.md#task-6--perform-a-trace)) `40 points`
 1. Create a performance monitoring plan using out-of-the-box tools ([Task 7](https://github.com/charliebravotango/Linton2022/blob/main/Assessment/Instructions.md#task-7--monitor-sql-server)) `40 points`
 ## Instructions
-- [X] The assessment must be completed withing `4 hours`
+- [X] The assessment must be completed within `4 hours`
 - [X] There are `200 points` available over 7 tasks&mdash;passing score is `160 points` (80%)
 - [X] Tasks may be undertaken in any order (some cannot be done before others&mdash;most tasks depend on the assessment database having been created)
 - [X] Several tasks have code to run in SSMS&mdash;leave the results window open for the assessment observation
