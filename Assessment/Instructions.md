@@ -68,12 +68,19 @@ SELECT COUNT(1) AS [N], SUM(price) AS [Sigma] FROM assessment.prices
 > 20 points (maximum)&mdash;`60 points` available
 
 Placeholder
-
-![Task 2 Results Window](https://linton.blob.core.windows.net/public/Simulate%20Activity.sql)
 ## Task 3 &mdash; Modify a database
-> 20 points
+> 20 points (maximum)&mdash;`60 points` available
 
-Placeholder&mdash;Simulates activity on a database
+### Overview
+This task is meant to simulate application activity in the database. For simplicity, a script is provided that can be downloaded from an Azure storage account that will modify the database's data.
+### Resources
+Download the following script and open it in SSMS
+- [Simulate Activity Script](https://linton.blob.core.windows.net/public/Simulate%20Activity.sql)
+> The lab VM only has Internet Explorer installed, which can download the script; choose *Open* in the prompt at the bottom of the Internet Explorer browser window. This will open the script in SSMS for you.
+
+
+
+![Task 2 Results Window](https://github.com/charliebravotango/Linton2022/blob/main/Artefacts/Task2Results.png)
 ## Task 4 &mdash; Restore a database
 > 20 points
 
