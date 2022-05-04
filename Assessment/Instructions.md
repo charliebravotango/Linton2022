@@ -11,3 +11,9 @@ If you have any problems with the following tasks, please contact your instructo
 - [ ] Logon to the 20764C-MIA-SQL computer as `Student`
 - [ ] Open *SQL Server Management Studio* and logon on to the `DEFAULT` instance of SQL Server Database Engine
 - [ ] Breathe :flushed:
+
+## Tasks to accomplish
+1. Create and populate a database
+1. Backup the new database
+1. Modify the database
+1. 
