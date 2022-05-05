@@ -122,9 +122,9 @@ SELECT COUNT(1) AS [N], SUM(price) AS [Sigma] FROM assessment.prices;
 ## Task 4 &mdash; Restore a database
 > 20 points (maximum)&mdash;`60 points` available
 ### Overview
-This task is meant to simulate recovering from a disaster. However, for simplicity and to prevent overwriting the database (which would break the ability to perform the tasks in any order) we will restore a previous backup, such as performed in [Task 2 &mdash; Backup a database], to a ***new*** database.
+This task is meant to simulate recovering from a disaster. However, for simplicity and to prevent overwriting the database (which would break the ability to perform the tasks in any order) we will restore a previous backup, such as performed in [Task 2 &mdash; Backup a database](https://github.com/charliebravotango/Linton2022/blob/main/Assessment/Instructions.md#task-2--backup-a-database), to a ***new*** database.
 ### Resources
-This task requires that a database backup has been performed from another task, such as [Task 2 &mdash; Backup a database].
+This task requires that a database backup has been performed from another task, such as [Task 2 &mdash; Backup a database](https://github.com/charliebravotango/Linton2022/blob/main/Assessment/Instructions.md#task-2--backup-a-database).
 - [ ] Database backup
 
 ### Instructions
