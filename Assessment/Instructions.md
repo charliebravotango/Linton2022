@@ -154,8 +154,11 @@ This task requires that a database backup has been performed from another task, 
 :warning: If you used the *Object Explorer* method to perform the restore, your instructor will ask you to demonstrate the configuration of the dialog box(es) you used without having to perform the restore again.
 ## Task 5 &mdash; Create a database maintenance plan
 > 40 points
+### Overview
+Regular database maintenance is important to keep the database (as opposed to the database *server*) running efficiently. This normally includes index maintenance and regular backups.
 
-Placeholder
+:warning: This task has no prerequisites may be done at any time and on any database including system databases such as `master`.
+
 ## Task 6 &mdash; Perform a trace
 > 40 points
 
