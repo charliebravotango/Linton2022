@@ -67,7 +67,7 @@ SELECT COUNT(1) AS [N], SUM(price) AS [Sigma] FROM assessment.prices;
 
 ![Task 1 Results Window](https://github.com/charliebravotango/Linton2022/blob/main/Artefacts/Task1results.png)
 ## Task 2 &mdash; Backup a database
-> 20 points (maximum)&mdash;`60 points` available
+> 20 points (maximum)&mdash;`40 points` available
 
 ### Overview
 This task is meant to simulate a requirement to take an *ad hoc* backup of the database to the server's filesystem. 
