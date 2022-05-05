@@ -197,7 +197,7 @@ In this context *Maintenance Plan* and *SQL Server Agent Job* are referred to si
 
 :star2: A maximum of `40 points` will be allocated even if more than 40 points are awarded.
 ## Task 6 &mdash; Perform a trace
-> 40 points
+> 40 points (maximum)&mdash;`60 points` available
 ### Overview
 Being able to identify what is going on inside SQL Server is a specialised task, that requires years of experience; this task gets you to demonstrate that you have the basics of knowledge of the tools available *out-of-the-box* to look forensically at activity inside the database engine.
 In this task you will use a script to simulate a badly written query that takes several seconds to run in our lab environment.
@@ -209,10 +209,50 @@ Your task will be to capture that query forensically.
 > The lab VM only has Internet Explorer installed, which can download the script; choose *Open* in the prompt at the bottom of the Internet Explorer browser window. This will open the script in SSMS for you.
 ### Instructions
 This task is broken into two parts&mdash;*SQL Trace* and *Extended Events*. In order to obtain all available points both parts of the instructions should be attempted as each part is worth ½ the available points (`20 points` each).
-#### SQL Trace
+#### SQL Trace method
 SQL Trace has been deprecated for a number of years, but is still useful (and can be used to generate a workload for the *Database Engine Tuning Advisor*, which *Extended Events* cannot).
 
-1. 
+1. Launch *SQL Server Profiler* ("Profiler")
+    1. An easy way to do this is from the `Tools` menu in SSMS
+1. Connect to `MIA-SQL`
+1. In the *Trace Properties* dialog, use the *Standard (default)* template
+1. In the *Trace Properties* dialog, select the *Events Selection* tab
+    1. Use the *Column Filters* button to filter for
+        1. *Duration* greater than or equal to 1000ms
+        1. *Application Name* like `Microsoft SQL Server Management Studio - Query`
+    1. Configure any other properties as appropriate
+1. Click *Run* to start the trace
+1. Switch back to SSMS
+1. Open the `Workload.sql` script
+1. Run the script several times (each run will take several seconds)
+1. Switch back to Profiler
+1. Stop the trace
+1. Analyse the results
+
+#### Extended Events method
+Extended Events is the replacement for SQL Trace and as such is recommended by Microsoft to replace it.
+1. In SSMS, navigate in *Object Explorer* to *Extended Events*
+1. Use the *New Session Wizard* to configure Extended Events to capture similar information to what was done with Profiler
+1. Make sure to start the session when the wizard is complete and to show *Watch live data on screen*
+1. Run the `Workload.ssql` script several times as was done for Profiler
+1. Switch back to the Extended Events viewer window
+1. Analyse the results
+### Success criteria&mdash;`40 points`
+#### SQL Trace&mdash;maximum `20 points`
+- [ ] Profiler launched&mdash;`5 points`
+- [ ] Trace collected&mdash;`5 points`
+- [ ] Evidence the filters were set correctly&mdash;`5 points`
+- [ ] Trace shows [mostly] the poorly written query in the `Workload.sql` script&mdash;`5 points`
+- [ ] Assessment candidate provides basic analysis of the results&mdash;`5 points`
+#### Extended Events&mdash;`20 points`
+- [ ] Extended Events session created&mdash;`5 points`
+- [ ] Extended Events session name is appropriate&mdash;`5 points`
+- [ ] Extended Events session captured activity&mdash;`5 points`
+- [ ] Poorly written query in `Workload.sql` script is evident&mdash;`5 points`
+- [ ] Assessment candidate provides basic analysis of the results&mdash;`5 points`
+#### Bonus
+- [ ] Assessment candidate can argue a [personal] preference between the two techniques&mdash;`10 points`
+
 ## Task 7 &mdash; Monitor SQL Server
 > 40 points
 ### Overview
