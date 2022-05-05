@@ -81,6 +81,7 @@ There is no script for this task.
 1. Close the dialog box(es); your instructor will ask you to demonstrate the settings you used to take the backup
 #### Transact-SQL method
 1. Use the `BACKUP DATABASE` T-SQL command to back up the database
+1. Leave the query window (with its results) open for your instructor to observe when assessing this task
 
 :notebook: A helpful example, [link](https://docs.microsoft.com/en-us/sql/t-sql/statements/backup-transact-sql?view=sql-server-ver15#backing_up_db) to `BACKUP DATABASE` *Books Online* example.
 #### PowerShell method [bonus points]
@@ -119,9 +120,38 @@ SELECT COUNT(1) AS [N], SUM(price) AS [Sigma] FROM assessment.prices;
 
 ![Task 2 Results Window](https://github.com/charliebravotango/Linton2022/blob/main/Artefacts/Task2Results.png)
 ## Task 4 &mdash; Restore a database
-> 20 points
+> 20 points (maximum)&mdash;`60 points` available
+### Overview
+This task is meant to simulate recovering from a disaster. However, for simplicity and to prevent overwriting the database (which would break the ability to perform the tasks in any order) we will restore a previous backup, such as performed in [Task 2 &mdash; Backup a database], to a ***new*** database.
+### Resources
+This task requires that a database backup has been performed from another task, such as [Task 2 &mdash; Backup a database].
+- [ ] Database backup
 
-Placeholder&mdash;Simulates recovering from a disaster
+### Instructions
+#### SSMS method
+1. Use *Object Explorer* to restore a database from a previously-taken backup
+1. Restore to a new database, which will require a unique name, such as `assessment-restored`
+1. Close any dialog boxes once completed&mdash;your instructor will ask you to demonstrate the settings used when performing assessment observation
+#### Transact-SQL method
+1. Use the `RESTORE DATABASE` command to restore a database from a previously-taken backup
+1. Restore to a new database, which will require a unique name, such as `assessment-restored`
+1. Leave the query window (with its results) open for your instructor to observe when assessing this task
+
+:notebook: A helpful example [link](https://docs.microsoft.com/en-us/sql/t-sql/statements/restore-statements-transact-sql?view=sql-server-ver15#restoring_db_n_move_files "SQL Server Books online") to *Books Online* documentation.
+#### PowerShell method [bonus points]
+1. Use the `RESTORE-SQLBACKUP` PowerShell comandlet
+1. Leave the PowerShell window open for assessment observation
+
+:notebook: [Link](https://docs.microsoft.com/en-us/powershell/module/sqlserver/restore-sqldatabase?view=sqlserver-ps#examples "PowerShell Documentation") to examples from the PowerShell documentation.
+
+:warning: This method gains double points!
+### Success Criteria `40 points`
+- [ ] Command to restore the backup observed&mdash;`10 points`
+- [ ] Restore operation successful&mdash;`10 points`
+- [ ] New database observed&mdash;`10 points`
+- [ ] New database files have unique names&mdash;`10 points`
+
+:warning: If you used the *Object Explorer* method to perform the restore, your instructor will ask you to demonstrate the configuration of the dialog box(es) you used without having to perform the restore again.
 ## Task 5 &mdash; Create a database maintenance plan
 > 40 points
 
