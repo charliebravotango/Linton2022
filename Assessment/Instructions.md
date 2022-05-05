@@ -53,7 +53,7 @@ Download the following script and open it in SSMS
 ### Instructions
 1. Open the `Create and populate database.sql` script in SSMS
 1. Run the script
-    1. Keep the *Results* window open for the assessment
+    1. Keep the *Results* window open for the assessment observation
 > If you run the script more than once, you will get an error, but the *Results* tab should show the results correctly.
 
 Alternatively, you can run the following query
@@ -69,7 +69,32 @@ SELECT COUNT(1) AS [N], SUM(price) AS [Sigma] FROM assessment.prices;
 ## Task 2 &mdash; Backup a database
 > 20 points (maximum)&mdash;`60 points` available
 
-Placeholder
+### Overview
+This task is meant to simulate a requirement to take an *ad hoc* backup of the database to the server's filesystem. 
+### Resources
+There is no script for this task.
+- [ ] Create a folder to store the backups, for instance `C:\BACKUP`
+
+### Instructions
+#### SMSS method
+1. Use *Object Explorer* to take a backup of the database
+1. Close the dialog box(es); your instructor will ask you to demonstrate the settings you used to take the backup
+#### Transact-SQL method
+1. Use the `BACKUP DATABASE` T-SQL command to back up the database
+
+:notebook: A helpful example, [link](https://docs.microsoft.com/en-us/sql/t-sql/statements/backup-transact-sql?view=sql-server-ver15#backing_up_db) to `BACKUP DATABASE` *Books Online* example.
+#### PowerShell method [bonus points]
+1. Use the `BACKUP-SQLDATABASE` PowerShell commandlet
+1. Leave the PowerShell window open for assessment observation 
+
+:notebook: [Link](https://docs.microsoft.com/en-us/powershell/module/sqlserver/backup-sqldatabase?view=sqlserver-ps#examples) to helpful examples from the PowerShell documentation.
+
+:warning: This method gains double points!
+### Success Criteria `20 points`
+- [ ] Command to backup database observed&mdash;`10 points`
+- [ ] Backup file observed with appropriate timestamp&mdash;`10 points`
+
+:warning: If you used the *Object Explorer* method to take the backup, your instructor will ask you to demonstrate the configuration of the dialog box(es) you used without having to perform the backup again.
 ## Task 3 &mdash; Modify a database
 > 20 points
 
