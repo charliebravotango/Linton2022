@@ -157,7 +157,32 @@ This task requires that a database backup has been performed from another task, 
 ### Overview
 Regular database maintenance is important to keep the database (as opposed to the database *server*) running efficiently. This normally includes index maintenance and regular backups.
 
-:warning: This task has no prerequisites may be done at any time and on any database including system databases such as `master`.
+:warning: This task has no prerequisites and may be done at any time and on any database including system databases such as `master`.
+### Resources
+This task has no specific resources required.
+### Instructions
+Your maintenance plan(s) should take care of [at least] the following operations:
+- Database integrity
+- Statistics updates
+- Index fragmentation
+- Database backups (full, differential, *and* transaction log (where appropriate))
+- Cleanup
+
+#### Maintenance Plan method
+1. Use *Object Explorer* to create one or more *Maintenance Plan(s)*
+1. Use an appropriate name for the paln(s)
+1. Use an appropriate schedule for the plan(s)
+
+:warning: Be prepared to explain your rationale for the configuration(s) you have used.
+#### SQL Server Agent Job method
+Use *Transact-SQL* as the job step type&mdash;you *could* use PowerShell or SSIS for these tasks, but *Transact-SQL* is more appropriate in this context.
+1. Verify the SQL Server Agent is set to start automatically when the database engine starts
+1. Verify the SQL Server Agent is running
+1. Create one or more jobs, with one or more steps, to perform the operations listed above
+1. Use appropriate names for the jobs and job steps
+1. Use appropriate schedule(s) for the jobs
+
+:warning: Be prepared to explain your rationale for the configuration(s) you have used.
 
 ## Task 6 &mdash; Perform a trace
 > 40 points
