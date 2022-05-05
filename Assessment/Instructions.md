@@ -200,8 +200,19 @@ In this context *Maintenance Plan* and *SQL Server Agent Job* are referred to si
 > 40 points
 ### Overview
 Being able to identify what is going on inside SQL Server is a specialised task, that requires years of experience; this task gets you to demonstrate that you have the basics of knowledge of the tools available *out-of-the-box* to look forensically at activity inside the database engine.
+In this task you will use a script to simulate a badly written query that takes several seconds to run in our lab environment.
+Your task will be to capture that query forensically.
+### Resources
+- [ ] Download the following script and open it in SSMS
+   - [Workload Script](https://linton.blob.core.windows.net/public/Workload.sql)
+- [ ] Ensure the `AdventureWorks2016CTP3` database has been restored and is available
+> The lab VM only has Internet Explorer installed, which can download the script; choose *Open* in the prompt at the bottom of the Internet Explorer browser window. This will open the script in SSMS for you.
+### Instructions
+This task is broken into two parts&mdash;*SQL Trace* and *Extended Events*. In order to obtain all available points both parts of the instructions should be attempted as each part is worth ½ the available points (`20 points` each).
+#### SQL Trace
+SQL Trace has been deprecated for a number of years, but is still useful (and can be used to generate a workload for the *Database Engine Tuning Advisor*, which *Extended Events* cannot).
 
-Placeholder
+1. 
 ## Task 7 &mdash; Monitor SQL Server
 > 40 points
 ### Overview
