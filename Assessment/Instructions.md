@@ -120,7 +120,7 @@ SELECT COUNT(1) AS [N], SUM(price) AS [Sigma] FROM assessment.prices;
 
 ![Task 2 Results Window](https://github.com/charliebravotango/Linton2022/blob/main/Artefacts/Task2Results.png)
 ## Task 4 &mdash; Restore a database
-> 20 points (maximum)&mdash;`60 points` available
+> 20 points (maximum)&mdash;`80 points` available
 ### Overview
 This task is meant to simulate recovering from a disaster. However, for simplicity and to prevent overwriting the database (which would break the ability to perform the tasks in any order) we will restore a previous backup, such as performed in [Task 2 &mdash; Backup a database](https://github.com/charliebravotango/Linton2022/blob/main/Assessment/Instructions.md#task-2--backup-a-database), to a ***new*** database.
 ### Resources
@@ -153,13 +153,15 @@ This task requires that a database backup has been performed from another task, 
 
 :warning: If you used the *Object Explorer* method to perform the restore, your instructor will ask you to demonstrate the configuration of the dialog box(es) you used without having to perform the restore again.
 ## Task 5 &mdash; Create a database maintenance plan
-> 40 points
+> 40 points (maximum) &mdash; `50 points` available
 ### Overview
 Regular database maintenance is important to keep the database (as opposed to the database *server*) running efficiently. This normally includes index maintenance and regular backups.
 
 :warning: This task has no prerequisites and may be done at any time and on any database including system databases such as `master`.
 ### Resources
 This task has no specific resources required.
+
+However, bookmark [Brent Ozar's Scripts](https://www.brentozar.com/first-aid/ "Free SQL Server Maintenance Scripts") for future reading and download.
 ### Instructions
 Your maintenance plan(s) should take care of [at least] the following operations:
 - Database integrity
@@ -170,8 +172,9 @@ Your maintenance plan(s) should take care of [at least] the following operations
 
 #### Maintenance Plan method
 1. Use *Object Explorer* to create one or more *Maintenance Plan(s)*
-1. Use an appropriate name for the paln(s)
+1. Use an appropriate name for the plan(s)
 1. Use an appropriate schedule for the plan(s)
+1. Execute the plan at least once to check it runs without error
 
 :warning: Be prepared to explain your rationale for the configuration(s) you have used.
 #### SQL Server Agent Job method
@@ -181,14 +184,26 @@ Use *Transact-SQL* as the job step type&mdash;you *could* use PowerShell or SSIS
 1. Create one or more jobs, with one or more steps, to perform the operations listed above
 1. Use appropriate names for the jobs and job steps
 1. Use appropriate schedule(s) for the jobs
+1. Execute the job(s) at least once to check they run without error
 
 :warning: Be prepared to explain your rationale for the configuration(s) you have used.
+### Success Criteria `40 points`
+In this context *Maintenance Plan* and *SQL Server Agent Job* are referred to simply as *'plan'*.
+- [ ] One or more plans created&mdash;`10 points`
+- [ ] Plan has an appropriate name&mdash;`10 points`
+- [ ] Plan has an appropriate schedule&mdash;`10 points`
+- [ ] Plan(s) perform all 7 operations appropriately&mdash;`10 points`
+- [ ] Plan(s) execute without error when invoked manually&mdash;`10 points`
 
+:star2: A maximum of `40 points` will be allocated even if more than 40 points are awarded.
 ## Task 6 &mdash; Perform a trace
 > 40 points
+### Overview
+Being able to identify what is going on inside SQL Server is a specialised task, that requires years of experience; this task gets you to demonstrate that you have the basics of knowledge of the tools available *out-of-the-box* to look forensically at activity inside the database engine.
 
 Placeholder
 ## Task 7 &mdash; Monitor SQL Server
 > 40 points
-
+### Overview
+"The database is very slow today!" is a very common complaint from end-users. Being able to identify 
 Placeholder
