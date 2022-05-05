@@ -199,7 +199,7 @@ In this context *Maintenance Plan* and *SQL Server Agent Job* are referred to si
 ## Task 6 &mdash; Perform a trace
 > 40 points (maximum)&mdash;`60 points` available
 ### Overview
-Being able to identify what is going on inside SQL Server is a specialised task, that requires years of experience; this task gets you to demonstrate that you have the basics of knowledge of the tools available *out-of-the-box* to look forensically at activity inside the database engine.
+Being able to identify what is going on inside SQL Server is a specialised skill that requires years of experience; this task gets you to demonstrate that you have the basics of knowledge of the tools available *out-of-the-box* to look forensically at activity inside the database engine.
 In this task you will use a script to simulate a badly written query that takes several seconds to run in our lab environment.
 Your task will be to capture that query forensically.
 ### Resources
@@ -250,11 +250,64 @@ Extended Events is the replacement for SQL Trace and as such is recommended by M
 - [ ] Extended Events session captured activity&mdash;`5 points`
 - [ ] Poorly written query in `Workload.sql` script is evident&mdash;`5 points`
 - [ ] Assessment candidate provides basic analysis of the results&mdash;`5 points`
-#### Bonus
+#### Bonus&mdash;`10 points`
 - [ ] Assessment candidate can argue a [personal] preference between the two techniques&mdash;`10 points`
 
 ## Task 7 &mdash; Monitor SQL Server
-> 40 points
+> 40 points (maximum)&mdash;`80 points` available
 ### Overview
-"The database is very slow today!" is a very common complaint from end-users. Being able to identify 
-Placeholder
+"The database is very slow today!" is a very common complaint from end-users. Being able to identify the cause when SQL Server Database Engine 
+performance is less than optimal is another specialised skill that takes years to master. In this task we will 
+simulate the collection of some key perfomance indicators of SQL Server using the poorly written query from task 6's 
+[resources](https://github.com/charliebravotango/Linton2022/blob/main/Assessment/Instructions.md#resources-5).
+### Resources
+- [ ] `Workload.sql` from Task 6's [resources](https://github.com/charliebravotango/Linton2022/blob/main/Assessment/Instructions.md#resources-5)
+- [ ] The `AdventureWorks2016CTP3` database is loaded and available
+### Instructions
+1. In SSMS open the `Workload.sql` file from Task 6's resources
+1. Add `GO 100` to the end of the file, the script should look like the following code
+	```SQL
+	USE AdventureWorks2016CTP3
+	SELECT * FROM Person.AddressType AS a
+	CROSS JOIN
+		(SELECT * FROM Person.Address
+		WHERE City IN(
+			SELECT DISTINCT a.City
+			FROM Person.Address AS a
+			 JOIN Person.BusinessEntityAddress AS be
+			  ON be.AddressID = a.AddressID
+			 JOIN Person.AddressType as t
+			  ON be.AddressTypeID = t.AddressTypeID
+			WHERE t.Name = 'Home'
+			)
+		) AS T
+	GO 100
+	```
+1. Run `Workload.sql` file&mdash;it should run for a number of seconds (if it stops, run it again or increase the `GO 100` and re-run)
+1. Start the operating system's *Performance Monitor*
+1. Configure Performance Monitor to display useful statistics such as:
+    1. CPU
+	1. Memory
+	1. Disk activity
+	1. SQL Server statistics
+	
+	:notebook: Brent Ozar has some advice on his [website](https://www.brentozar.com/archive/2006/12/dba-101-using-perfmon-for-sql-performance-tuning/ "SQL Server Perfmon (Performance Monitor) Best Practices")
+1. Be prepared to interpret what Performance Monitor is displaying
+
+#### Optional for bonus points
+- [ ] What are some other tools we could use to provide analysis of performance?
+
+Try searching the web for some of these and be prepared to discuss the benefits and short-comings of different tools available.
+
+Some suggestions to try in your favourite search engine:
+- Activity Monitor
+- Query Store
+- Performance-based DMVs (data management views)
+- Third-party tools such as Redgate Software
+
+### Success Criteria&mdash;`40 points`
+- [ ] Performance Monitor loaded&mdash;`10 points`
+- [ ] Performance Monitor displaying relevant statistics&mdash;`10 points`
+- [ ] Assessment candidate can argue what Performance Monitor statistics are relevant to SQL Server performance&mdash;`10 points`
+- [ ] Assessment candidate can interpret Performance Monitor statistics&mdash;`10 points`
+- [ ] [BONUS] Assessment candidate can suggest alternative monitoring tools and argue their benefits and short-comings&mdash;`40 points`
