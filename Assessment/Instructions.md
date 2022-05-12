@@ -59,7 +59,7 @@ Download the following script and open it in SSMS
 Alternatively, you can run the following query
 ```SQL
 USE assessment
-SELECT COUNT(1) AS [N], SUM(price) AS [Sigma] FROM assessment.prices;
+SELECT COUNT(1) AS [N], SUM(price) AS [Sigma] FROM dbo.prices;
 ```
 ### Success Criteria `20 points`
 - [ ] `assessment` database observed&mdash;`10 points`
@@ -73,7 +73,7 @@ SELECT COUNT(1) AS [N], SUM(price) AS [Sigma] FROM assessment.prices;
 This task is meant to simulate a requirement to take an *ad hoc* backup of the database to the server's filesystem. 
 ### Resources
 There is no script for this task.
-- [ ] Create a folder to store the backups, for instance `C:\BACKUP`
+- [ ] Create a folder to store the backups, for instance `D:\BACKUP`
 
 ### Instructions
 #### SMSS method
@@ -112,7 +112,7 @@ Download the following script and open it in SSMS
 Alternatively you can type the following script into SSMS directly and run it.
 ```SQL
 UPDATE assessment.dbo.prices SET price = id + 200;
-SELECT COUNT(1) AS [N], SUM(price) AS [Sigma] FROM assessment.prices;
+SELECT COUNT(1) AS [N], SUM(price) AS [Sigma] FROM dbo.prices;
 ```
 :warning: It is safe to run the script above as many times as you like, the results will always be the same!
 ### Success Criteria `20 points`
@@ -208,7 +208,7 @@ Your task will be to capture that query forensically.
 - [ ] Ensure the `AdventureWorks2016CTP3` database has been restored and is available
 > The lab VM only has Internet Explorer installed, which can download the script; choose *Open* in the prompt at the bottom of the Internet Explorer browser window. This will open the script in SSMS for you.
 ### Instructions
-This task is broken into two parts&mdash;*SQL Trace* and *Extended Events*. In order to obtain all available points both parts of the instructions should be attempted as each part is worth ½ the available points (`20 points` each).
+This task is broken into two parts&mdash;*SQL Trace* and *Extended Events*. In order to obtain all available points both parts of the instructions should be attempted as each part is worth Â½ the available points (`20 points` each).
 #### SQL Trace method
 SQL Trace has been deprecated for a number of years, but is still useful (and can be used to generate a workload for the *Database Engine Tuning Advisor*, which *Extended Events* cannot).
 
